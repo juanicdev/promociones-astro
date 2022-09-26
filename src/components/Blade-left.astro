@@ -1,5 +1,6 @@
 ---
 export interface Props {
+	img: string;
 	logo: string;
 	title: string;
 	body: string;
@@ -7,79 +8,94 @@ export interface Props {
     cta2: string;
 }
 
-const { logo, title, body, cta, cta2 } = Astro.props;
+const { img, logo, title, body, cta, cta2 } = Astro.props;
 ---
 
-<li class="">
-    <img src={logo} alt="el logo pantriste">
-		<h2>
-			{title}
-			<span>&rarr;</span>
-		</h2>
-		<p>
-			{body}
-		</p>
+<div class="descuentos edu-box">
+    <div class="banner-1">
 
-    <div>
-        <a href={cta}>El cta loquito</a>
-        <a href={cta2}>El cta2 chitrulo</a>
-        
-       
     </div>
-</li>
+    <div class="text-banner-1">
+	  <img src={img} alt="el logo pantriste">
+      <h3>{title}</h3>
+      <p>{body}</p>
+	  <br>
+      <a  href={cta} target="_blank" class="cta-beneficios">Comprar ahora</a>
+	  <!-- <a href={cta2}>El cta2 chitrulo</a> -->
+    </div>
+</div>  
+
 <style>
-	:root {
-		--link-gradient: linear-gradient(45deg, #4f39fa, #da62c4 30%, var(--color-border) 60%);
+	.text-banner-1{
+    width: 700px;
+    margin: 0px auto;
+    text-align: left;
+}
+
+.text-banner-1 p{ width: 600px; line-height: 2;text-align: left;margin-bottom: 0px;}
+
+  
+    
+    
+	.cta-beneficios{
+    font-size: 16px;
+    font-weight: bold;
+    padding: 13px 50px;
+    background: #294E95;
+    color: #ffffff;
+    border: 1px solid;
+    border-radius: 5px;
+}
+
+.cta-beneficios:hover{
+    height: 48px;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 13px 50px;
+    background: #EAEEF5;
+    color: #0e5780;
+    border-radius: 3px;
+    border: 1px solid #0e5780;
+}
+	h1{
+      color: #fff;
+      line-height: initial;
+      font-weight: 500;
+    }
+  h3{
+    font-size: 2em;
+    color: #000;
+  }
+  .text-left{
+      margin-left: 15%;
+    }
+	@media (max-width: 1875px){
+		.text-banner-1{
+  padding: 20px;
+}
 	}
 
-	.link-card {
-		list-style: none;
-		display: flex;
-		padding: 0.15rem;
-		background-image: var(--link-gradient);
-		background-size: 400%;
-		border-radius: 0.5rem;
-		background-position: 100%;
-		transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-	}
-
-	.link-card > a {
-		width: 100%;
-		text-decoration: none;
-		line-height: 1.4;
-		padding: 1em 1.3em;
-		border-radius: 0.35rem;
-		color: var(--text-color);
-		background-color: white;
-		opacity: 0.8;
-	}
-
-	h2 {
-		margin: 0;
-		transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-	}
-
-	p {
-		margin-top: 0.75rem;
-		margin-bottom: 0;
-	}
-
-	h2 span {
-		display: inline-block;
-		transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
-	}
-
-	.link-card:is(:hover, :focus-within) {
-		background-position: 0;
-	}
-
-	.link-card:is(:hover, :focus-within) h2 {
-		color: #4f39fa;
-	}
-
-	.link-card:is(:hover, :focus-within) h2 span {
-		will-change: transform;
-		transform: translateX(2px);
+	@media (max-width: 1200px){
+		h3{
+        font-size: 26px;
+    }  
+	.text-banner-1 h3 {
+        margin-top: 30px;
+    }
+      .text-banner-1{
+              text-align: center;
+    width: 100%;
+    
+  }
+  
+  .text-banner-1 p{
+            width: 100%;
+            text-align: center;
+            /* padding: 20px; */
+            font-size: 14px;
+}
+h1{
+      font-size: 25px;
+    }
 	}
 </style>
-    
