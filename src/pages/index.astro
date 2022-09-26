@@ -1,0 +1,106 @@
+---
+import Layout from '../layouts/Layout.astro';
+import BladeLeft from '../components/Blade-left.astro';
+import BladeRight from '../components/Blade-right.astro';
+---
+
+<Layout title="Welcome to Astro.">
+	<main>
+		<div class="hero-edu">
+			<div class="hero-edu-text">
+			  <h1>Beneficios para Estudiantes, Profesores e Instituciones Educativas</h1>
+			  <p>Maximiza tu aprendizaje con una PC Lenovo y accede a promociones especiales por ser parte del programa.</p>
+			</div>
+		</div>
+		<ul role="list" class="link-card-grid">
+			<BladeRight
+				logo="//static.lenovo.com/las/2022/public/promo/prueba/lenovo-yoga-logo-desktop.png"
+				title="Elegí tu Yoga"	
+				body=" Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur ex iste vero aliquam inventore, labore nostrum nesciunt architecto culpa deleniti ut velit officiis explicabo, consequatur dolorum officia pariatur esse quibusdam."
+				cta= "https://www.lenovo.com/mx/es/pc"
+				cta2="https://www.lenovo.com/mx/es/pc"
+			/>
+			<BladeLeft
+				logo="//static.lenovo.com/las/2022/public/promo/prueba/lenovo-yoga-logo-desktop.png"
+				title="Elegí tu Legion"
+				body=" Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur ex iste vero aliquam inventore, labore nostrum nesciunt architecto culpa deleniti ut velit officiis explicabo, consequatur dolorum officia pariatur esse quibusdam."
+				cta= "https://www.lenovo.com/mx/es/pc"
+				cta2="https://www.lenovo.com/mx/es/pc"
+			/>
+			<BladeRight
+				logo="//static.lenovo.com/las/2022/public/promo/prueba/lenovo-yoga-logo-desktop.png"
+				title="Elegí tu Thinkpad"
+				body=" Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur ex iste vero aliquam inventore, labore nostrum nesciunt architecto culpa deleniti ut velit officiis explicabo, consequatur dolorum officia pariatur esse quibusdam."
+				cta= " https://www.lenovo.com/mx/es/pc"
+				cta2=" https://www.lenovo.com/mx/es/pc"
+			/>
+			<BladeLeft
+				logo="//static.lenovo.com/las/2022/public/promo/prueba/lenovo-yoga-logo-desktop.png"
+				title="Elegí tu Ideapad"
+				body=" Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur ex iste vero aliquam inventore, labore nostrum nesciunt architecto culpa deleniti ut velit officiis explicabo, consequatur dolorum officia pariatur esse quibusdam. ❤️"
+				cta= "https://www.lenovo.com/mx/es/pc"
+				cta2="https://www.lenovo.com/mx/es/pc"
+			/>
+		</ul>
+	</main>
+</Layout>
+
+<style>
+	:root {
+		--astro-gradient: linear-gradient(0deg, #4f39fa, #da62c4);
+	}
+
+	h1 {
+		margin: 2rem 0;
+	}
+
+	main {
+		margin: auto;
+		padding: 1em;
+		max-width: 60ch;
+	}
+
+	.text-gradient {
+		font-weight: 900;
+		background-image: var(--astro-gradient);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-size: 100% 200%;
+		background-position-y: 100%;
+		border-radius: 0.4rem;
+		animation: pulse 4s ease-in-out infinite;
+	}
+
+	@keyframes pulse {
+		0%,
+		100% {
+			background-position-y: 0%;
+		}
+		50% {
+			background-position-y: 80%;
+		}
+	}
+
+	.instructions {
+		line-height: 1.6;
+		margin: 1rem 0;
+		background: #4f39fa;
+		padding: 1rem;
+		border-radius: 0.4rem;
+		color: var(--color-bg);
+	}
+
+	.instructions code {
+		font-size: 0.875em;
+		border: 0.1em solid var(--color-border);
+		border-radius: 4px;
+		padding: 0.15em 0.25em;
+	}
+
+	.link-card-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+		gap: 1rem;
+		padding: 0;
+	}
+</style>
