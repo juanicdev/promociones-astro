@@ -4,98 +4,126 @@ export interface Props {
 	logo: string;
 	title: string;
 	body: string;
-    cta: string;
-    cta2: string;
+	cta: string;
+	cta2: string;
 }
 
 const { img, logo, title, body, cta, cta2 } = Astro.props;
 ---
 
-<div class="descuentos edu-box">
-    <div class="banner-1">
-
-    </div>
-    <div class="text-banner-1">
-	  <img src={img} alt="el logo pantriste">
-      <h3>{title}</h3>
-      <p>{body}</p>
-	  <br>
-      <a  href={cta} target="_blank" class="cta-beneficios">Comprar ahora</a>
-	  <!-- <a href={cta2}>El cta2 chitrulo</a> -->
-    </div>
-</div>  
+<div class="edu-box">
+	<div class="banner-1">
+		<img src={img} alt="el logo pantriste" />
+	</div>
+	<div class="text-banner-1">
+		<img src={logo} alt="el logo pantriste" />
+		<h3>{title}</h3>
+		<p>{body}</p>
+		<br />
+		<button class="cta-beneficios">
+			<a href={cta} target="_blank">Comprar ahora</a></button>
+		<!-- <a href={cta2}>El cta2 chitrulo</a> -->
+	</div>
+</div>
 
 <style>
-	.text-banner-1{
-    width: 700px;
-    margin: 0px auto;
-    text-align: left;
-}
+	.edu-box {
+		text-align: center;
+		display: flex;
+		height: 660px;
+	}
+	.text-banner-1 {
+		width: 640px;
+		text-align: left;
+		margin-top: 156px;
+    	margin-bottom: 160px;
+		margin-left: 80px;
+		margin-right: 80px;
 
-.text-banner-1 p{ width: 600px; line-height: 2;text-align: left;margin-bottom: 0px;}
-
-  
-    
-    
-	.cta-beneficios{
-    font-size: 16px;
-    font-weight: bold;
-    padding: 13px 50px;
-    background: #294E95;
-    color: #ffffff;
-    border: 1px solid;
-    border-radius: 5px;
-}
-
-.cta-beneficios:hover{
-    height: 48px;
-    font-size: 16px;
-    font-weight: bold;
-    padding: 13px 50px;
-    background: #EAEEF5;
-    color: #0e5780;
-    border-radius: 3px;
-    border: 1px solid #0e5780;
-}
-	h1{
-      color: #fff;
-      line-height: initial;
-      font-weight: 500;
-    }
-  h3{
-    font-size: 2em;
-    color: #000;
-  }
-  .text-left{
-      margin-left: 15%;
-    }
-	@media (max-width: 1875px){
-		.text-banner-1{
-  padding: 20px;
-}
 	}
 
-	@media (max-width: 1200px){
-		h3{
-        font-size: 26px;
-    }  
-	.text-banner-1 h3 {
-        margin-top: 30px;
-    }
-      .text-banner-1{
-              text-align: center;
-    width: 100%;
-    
-  }
-  
-  .text-banner-1 p{
-            width: 100%;
-            text-align: center;
-            /* padding: 20px; */
-            font-size: 14px;
-}
-h1{
-      font-size: 25px;
-    }
+	.text-banner-1 img{
+		margin-bottom: 28px;
+	}
+
+	.text-banner-1 p{
+	margin: 0px 0px 24px 0px;
+	}
+
+	/* .text-banner-1 p {
+		width: 600px;
+		line-height: 2;
+		text-align: left;
+		margin-bottom: 0px;
+	} */
+
+	.cta-beneficios {
+		font-size: 16px;
+		font-weight: bold;
+		padding: 13px 50px;
+		background: #294e95;
+		color: #ffffff;
+		border: 1px solid;
+		border-radius: 5px;
+	}
+
+	.cta-beneficios a{
+		text-decoration: none;
+		color: #fff;
+	}
+
+	
+
+	button.cta-beneficios:hover {
+		height: 48px;
+		font-size: 16px;
+		font-weight: bold;
+		padding: 13px 50px;
+		background: #eaeef5;
+		color: #0e5780!important;
+		border-radius: 3px;
+		border: 1px solid #0e5780;
+	}
+
+	h1 {
+		color: #fff;
+		line-height: initial;
+		font-weight: 500;
+	}
+	h3 {
+		font-size: 2em;
+		color: #000;
+		margin: 0px 0px 28px 0px;
+	}
+	.text-left {
+		margin-left: 15%;
+	}
+	@media (max-width: 1875px) {
+		.text-banner-1 {
+			padding: 20px;
+		}
+	}
+
+	@media (max-width: 1200px) {
+		h3 {
+			font-size: 26px;
+		}
+		.text-banner-1 h3 {
+			margin-top: 30px;
+		}
+		.text-banner-1 {
+			text-align: center;
+			width: 100%;
+		}
+
+		.text-banner-1 p {
+			width: 100%;
+			text-align: center;
+			/* padding: 20px; */
+			font-size: 14px;
+		}
+		h1 {
+			font-size: 25px;
+		}
 	}
 </style>

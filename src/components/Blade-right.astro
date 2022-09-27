@@ -4,116 +4,148 @@ export interface Props {
 	logo: string;
 	title: string;
 	body: string;
-    cta: string;
-    cta2: string;
+	cta: string;
+	cta2: string;
 }
 
 const { img, logo, title, body, cta, cta2 } = Astro.props;
 ---
 
-<div class="descuentos edu-box">
-    <div class="banner-1-right">
-
-    </div>
-    <div class="text-banner-1-right">
-	  <img src={img} alt="el logo pantriste">
-      <h3>{title}</h3>
-      <p>{body}</p>
-	  <br>
-      <a  href={cta} target="_blank" class="cta-beneficios">Comprar ahora</a>
-	  <!-- <a href={cta2}>El cta2 chitrulo</a> -->
-    </div>
-</div>  
+<div class="edu-box-right">
+	<div class="text-banner-1-right">
+		<img src={logo} alt="el logo pantriste" />
+		<h3>{title}</h3>
+		<p>{body}</p>
+		<br />
+		<button class="cta-beneficios">
+			<a href={cta} target="_blank" >Comprar ahora</a>
+		</button>
+		<!-- <a href={cta2}>El cta2 chitrulo</a> -->
+	</div>
+	<div class="banner-1-right">
+		<img src={img} alt="el logo pantriste" />
+	</div>
+</div>
 
 <style>
-	.cta-beneficios{
-    font-size: 16px;
-    font-weight: bold;
-    padding: 13px 50px;
-    background: #294E95;
-    color: #ffffff;
-    border: 1px solid;
-    border-radius: 5px;
-}
-
-.cta-beneficios:hover{
-    height: 48px;
-    font-size: 16px;
-    font-weight: bold;
-    padding: 13px 50px;
-    background: #EAEEF5;
-    color: #0e5780;
-    border-radius: 3px;
-    border: 1px solid #0e5780;
-}
-.banner-1-right{
-  width:auto;
-}
-	.text-banner-1 {	
-		display: none;
+	.banner-1-right img{
 	}
-	.text-banner-1-right{
-  width: 700px;
-    margin: 0px auto;
-    text-align: left;
-}
-h1{
-      color: #fff;
-      line-height: initial;
-      font-weight: 500;
-    }
-  h3{
-    font-size: 2em;
-    color: #000;
-  }
-  
-  .text-right{
-      margin-left:55%;
-    }
-	@media (max-width: 1875px){
-		.banner-1-right{
-  width:100%;
-}
-.text-banner-1-right{
-    padding: 20px;
-  }
-  .banner-1-right{
-  width:65%;
-}
+	.edu-box-right {
+			display: flex;
+			height: 660px;
+		}
+	.edu-box {
+		text-align: center;
+		display: flex;
+		height: 660px;
 	}
 
-	@media (max-width: 1200px){
-		.banner-1-right{
-  width:100%;
-}
-h3{
-        font-size: 26px;
-    } 
-	.text-banner-1-right h3 {
-        margin-top: 30px;
-    }
+	.cta-beneficios {
+		font-size: 16px;
+		font-weight: bold;
+		padding: 13px 50px;
+		background: #294e95;
+		color: #ffffff;
+		border: 1px solid;
+		border-radius: 5px;
+	}
 
-  .text-banner-1-right{
-    text-align: center;
-    width: 100%;
-  }
+	.cta-beneficios a{
+		text-decoration: none;
+		color: #fff;
+	}
 
-  .text-banner-1-right p{
-            width: 100%;
-            text-align: center;
-            /* padding: 20px; */
-            font-size: 14px;
-}
-h1{
-      font-size: 25px;
-    }
 	
-    .edu-box-right{
-      display: flex;
-      flex-direction: column-reverse;
-      margin-bottom: 30px;
-    }
+	
+	button.cta-beneficios:hover {
+		height: 48px;
+		font-size: 16px;
+		font-weight: bold;
+		padding: 13px 50px;
+		background: #eaeef5;
+		color: #0e5780;
+		border-radius: 3px;
+		border: 1px solid #0e5780;
+	}
+	.banner-1-right {
+		width: auto;
 	}
 
+	.text-banner-1-right {
+		width: 640px;
+		text-align: left;
+		margin-top: 156px;
+  	    margin-bottom: 160px;
+		margin-left: 80px;
+		margin-right: 80px;
+
+	}
+
+	.text-banner-1-right img{
+		margin-bottom: 28px;
+	}
+
+	.text-banner-1-right p{
+	margin: 0px 0px 24px 0px;
+	}
+
+	h1 {
+		color: #fff;
+		line-height: initial;
+		font-weight: 500;
+	}
+	h3 {
+		font-size: 2em;
+		color: #000;
+		margin: 0px 0px 28px 0px;
+
+	}
+
+	.text-right {
+		margin-left: 55%;
+	}
+	@media (max-width: 1875px) {
+		.banner-1-right {
+			width: 100%;
+		}
+		.text-banner-1-right {
+			padding: 20px;
+		}
+		.banner-1-right {
+			width: 65%;
+		}
+	}
+
+	@media (max-width: 1200px) {
+		.banner-1-right {
+			width: 100%;
+		}
+		h3 {
+			font-size: 26px;
+		}
+		.text-banner-1-right h3 {
+			margin-top: 30px;
+		}
+
+		.text-banner-1-right {
+			text-align: center;
+			width: 100%;
+		}
+
+		.text-banner-1-right p {
+			width: 100%;
+			text-align: center;
+			/* padding: 20px; */
+			font-size: 14px;
+		}
+		h1 {
+			font-size: 25px;
+		}
+
+		.edu-box-right {
+			display: flex;
+			flex-direction: column-reverse;
+			margin-bottom: 30px;
+		}
+	}
 </style>
-    
